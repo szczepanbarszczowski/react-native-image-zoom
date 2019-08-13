@@ -1,5 +1,5 @@
 {
-  "name": "react-native-image-pan-zoom",
+  "name": "@kingdaro/react-native-image-pan-zoom",
   "version": "2.1.11",
   "description": "react native image pan zoom",
   "main": "built/index.js",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ascoders/react-native-image-zoom.git"
+    "url": "https://github.com/kingdaro/react-native-image-zoom.git"
   },
   "keywords": [
     "image-zoom"
   ],
-  "author": "ascoders",
+  "author": "kingdaro",
   "license": "ISC",
   "peerDependencies": {
     "react": "*",
