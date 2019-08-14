@@ -5,7 +5,7 @@
   "main": "built/index.js",
   "types": "built/index.d.ts",
   "scripts": {
-    "prepare": "tsc",
+    "prepare": "trash built && tsc",
     "start": "tsc -w --outDir demo/built"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "ascoders-tslint-config": "^1.0.2",
     "react": "*",
     "react-native": "*",
+    "trash-cli": "^3.0.0",
     "tslint": "^5.8.0",
     "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.9.2"
