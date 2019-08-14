@@ -7,7 +7,7 @@ export interface ICenterOn {
   duration: number;
 }
 
-interface IOnMove {
+export interface IOnMove {
   type: string;
   positionX: number;
   positionY: number;
@@ -22,7 +22,7 @@ export interface IOnClick {
   pageY: number;
 }
 
-export class Props {
+export class ImageZoomProps {
   /**
    * 操作区域宽度
    */
@@ -141,7 +141,7 @@ export class Props {
    * 横向超出的距离，父级做图片切换时，可以监听这个函数
    * 当此函数触发时，可以做切换操作
    */
-  public horizontalOuterRangeOffset?: (offsetX?: number) => void = () => {
+  public horizontalOuterRangeOffset?: (offsetX: number) => void = () => {
     //
   };
 
@@ -155,21 +155,21 @@ export class Props {
   /**
    * 松手但是没有取消看图的回调
    */
-  public responderRelease?: (vx?: number, scale?: number) => void = () => {
+  public responderRelease?: (vx: number, scale: number) => void = () => {
     //
   };
 
   /**
    * If provided, this will be called everytime the map is moved
    */
-  public onMove?: (position?: IOnMove) => void = () => {
+  public onMove?: (position: IOnMove) => void = () => {
     //
   };
 
   /**
    * If provided, this method will be called when the onLayout event fires
    */
-  public layoutChange?: (event?: object) => void = () => {
+  public layoutChange?: (event: object) => void = () => {
     //
   };
 
@@ -193,7 +193,7 @@ export class Props {
   public onPanResponderTerminationRequest?: (event: GestureResponderEvent, gestureState: PanResponderGestureState) => boolean = () => false;
 }
 
-export class State {
+export class ImageZoomState {
   /**
    * 中心 x 坐标
    */
