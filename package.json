@@ -1,6 +1,6 @@
 {
   "name": "@kingdaro/react-native-image-pan-zoom",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "description": "react native image pan zoom",
   "main": "built/index.js",
   "types": "built/index.d.ts",
