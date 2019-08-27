@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Animated, LayoutChangeEvent, PanResponder, PanResponderInstance, StyleSheet, View } from 'react-native';
 import styles from './image-zoom.style';
-import { ICenterOn, ImageZoomProps, ImageZoomState } from './image-zoom.type';
+import { ICenterOn, Props, State } from './image-zoom.type';
 
-export default class ImageViewer extends React.Component<ImageZoomProps, ImageZoomState> {
-  public static defaultProps = new ImageZoomProps();
-  public state = new ImageZoomState();
+export default class ImageViewer extends React.Component<Props, State> {
+  public static defaultProps = new Props();
+  public state = new State();
 
   // 上次/当前/动画 x 位移
   private lastPositionX: number | null = null;
@@ -68,9 +68,8 @@ export default class ImageViewer extends React.Component<ImageZoomProps, ImageZo
   public componentWillMount() {
     this.imagePanResponder = PanResponder.create({
       // 要求成为响应者：
-      onStartShouldSetPanResponder: this.props.onStartShouldSetPanResponder,
-      onMoveShouldSetPanResponder: this.props.onMoveShouldSetPanResponder,
-      onPanResponderTerminationRequest: this.props.onPanResponderTerminationRequest,
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderTerminationRequest: () => false,
 
       onPanResponderGrant: evt => {
         // 开始手势操作
@@ -557,7 +556,7 @@ export default class ImageViewer extends React.Component<ImageZoomProps, ImageZo
     }
   }
 
-  public componentWillReceiveProps(nextProps: ImageZoomProps) {
+  public componentWillReceiveProps(nextProps: Props) {
     // Either centerOn has never been called, or it is a repeat and we should ignore it
     if (
       (nextProps.centerOn && !this.props.centerOn) ||
@@ -657,7 +656,7 @@ export default class ImageViewer extends React.Component<ImageZoomProps, ImageZo
         }}
         {...this.imagePanResponder!.panHandlers}
       >
-        <Animated.View style={animateConf} renderToHardwareTextureAndroid>
+        <Animated.View style={animateConf}>
           <View
             onLayout={this.handleLayout.bind(this)}
             style={{
