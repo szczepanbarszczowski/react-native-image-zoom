@@ -1,3 +1,5 @@
+This module is a fork of [ascoders/react-native-pan-zoom](https://github.com/ascoders/react-native-image-zoom) which adds a few more props for added outside control, and fixes a performance issue with large images.
+
 ## Show Cases
 
 > Zoom while sliding
@@ -13,7 +15,7 @@
 ### Installation
 
 ```bash
-npm i react-native-image-pan-zoom --save
+npm i @kingdaro/react-native-image-pan-zoom --save
 ```
 
 ### Basic Usage
@@ -34,7 +36,7 @@ $ create-react-native-app AwesomeProject
 
 ```typescript
 import { Image, Dimensions } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
+import ImageZoom from '@kingdaro/react-native-image-pan-zoom';
 
 export default class App extends React.Component {
     render: function() {
