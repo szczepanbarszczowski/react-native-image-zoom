@@ -654,7 +654,7 @@ export default class ImageZoom extends React.Component<ImageZoomProps, ImageZoom
           width: this.props.cropWidth,
           height: this.props.cropHeight
         }}
-        {...this.imagePanResponder!.panHandlers}
+        {...(this.props.panResponderDisabled ? {} : this.imagePanResponder!.panHandlers)}
       >
         <Animated.View style={animateConf}>
           <View

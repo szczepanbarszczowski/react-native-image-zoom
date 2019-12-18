@@ -191,6 +191,12 @@ export class ImageZoomProps {
    * By default, doesn't terminate until the press ends
    */
   public onPanResponderTerminationRequest?: (event: GestureResponderEvent, gestureState: PanResponderGestureState) => boolean = () => false;
+
+  /**
+   * Allows disabling pan responder,
+   * By default it is enabled
+   */
+  public panResponderDisabled?: boolean
 }
 
 export class ImageZoomState {
